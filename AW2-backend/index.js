@@ -13,7 +13,7 @@ const port= process.env.PORT || 3000
 app.use(express.json());
 
 app.use(cors({
-    origin: 'http://localhost:8080'
+    origin: 'https://fastmotos.netlify.app/'
 }))
 
 /*RUTAS DE USUARIOS*/

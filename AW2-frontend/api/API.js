@@ -1,1 +1,1 @@
-export const api="http://localhost:5005";
+export const api="https://aw2host.onrender.com";
