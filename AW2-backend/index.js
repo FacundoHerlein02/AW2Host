@@ -12,9 +12,10 @@ const port= process.env.PORT || 3000
 //Se usa para que el server entienda json
 app.use(express.json());
 
-app.use(cors({
-    origin: 'https://fastmotos.netlify.app/'
-}))
+// app.use(cors({
+//     origin: 'https://fastmotos.netlify.app/'
+// }))
+app.use(cors());
 
 /*RUTAS DE USUARIOS*/
 app.use('/usuarios',usuariosRouter)
@@ -24,7 +25,7 @@ app.use('/productos',productosRouter)
 app.use('/ventas',ventasRouter)
 
 //Levanta el Front-End
-app.use(express.static ('./public'))
+//app.use(express.static ('./public'))
 //Levanta el servidor. Rutas End-Point
 app.listen(port,()=>{
     console.log(`Servidor levantado en el puerto ${port}`)
