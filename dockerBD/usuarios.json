@@ -1,0 +1,130 @@
+[{
+  "_id": {
+    "$oid": "6833b4044c98cca3844b2693"
+  },
+  "nombre": "Facu",
+  "apellido": "herlein",
+  "usuario": "facuMongo",
+  "contraseña": "$2b$10$Z3sBwKPoCgcO4yfZGYI.MuDTBWRleCO4pq8CMR7OKtoIN139C5xe.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68366021db890bbbadedc76e"
+  },
+  "nombre": "Facu",
+  "apellido": "Herlein",
+  "usuario": "FacuAw2",
+  "contraseña": "$2b$10$lYwZjlmm3avMzqaimYkv3uZQ5q3ss1LNkZvIPmCm.q.X7koxYr9BK",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "683669d9db890bbbadedc780"
+  },
+  "nombre": "Facu",
+  "apellido": "Herlein",
+  "usuario": "pruebaAw2",
+  "contraseña": "$2b$10$6LN9c0u5H1iXEfwJQs2Bb.sZCF9UbvS2qt1LEPyFAtBCx8IeEu4.O",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6837329bd0b7f4f956b7d6a0"
+  },
+  "nombre": "Facu",
+  "apellido": "Herlein",
+  "usuario": "Register",
+  "contraseña": "$2b$10$k2YGDS.MAXxrYk6M2KHr5.JoVO6raWpXCX3TfMg0rdB4aYR6ZZE.2",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "683732f8d0b7f4f956b7d6a8"
+  },
+  "nombre": "Silvia",
+  "apellido": "perez",
+  "usuario": "SP",
+  "contraseña": "$2b$10$DE/dX8XDTYzNke/2w7t16e3cH/3BcDyhvsVNLPULSnNySpDLsL6Gu",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6837332ad0b7f4f956b7d6b0"
+  },
+  "nombre": "Facu",
+  "apellido": "Herlein",
+  "usuario": "FacuPost1",
+  "contraseña": "$2b$10$qGgnKdww1pGnww7bGCeFKu2FB.oE36z1wT2/qMFxQCv9Ccbym5k/e",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68373340d0b7f4f956b7d6b4"
+  },
+  "nombre": "Facu",
+  "apellido": "Herlein",
+  "usuario": "1",
+  "contraseña": "$2b$10$ecLiQo6itkKqyweEVuCD6OmkUVg0tyLkgxgkzG9p6bgA6WkN2AKQ6",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6837334cd0b7f4f956b7d6b8"
+  },
+  "nombre": "facundo",
+  "apellido": "herlein",
+  "usuario": "123Facu",
+  "contraseña": "$2b$10$MjZY0NdPp/EHwdNjbD8Y2.osmXNEb23WxTxeQxcyONyGQ55Mu9w6.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68373365d0b7f4f956b7d6bd"
+  },
+  "nombre": "1",
+  "apellido": "1",
+  "usuario": "2",
+  "contraseña": "$2b$10$MPm4ZwLL.1cgZQwhOCcDGuJ6JBEOSTncf.dYxeg.nZLRWY7grO.RG",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "683735114dcdd0218ea370d6"
+  },
+  "nombre": "Reg",
+  "apellido": "Reg",
+  "usuario": "Reg",
+  "contraseña": "$2b$10$Eo6BR8M3rHE.kalsdjKpIO8jY1TqNi6CYc.1dQTrmTm4JD2mQ2odq",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68373533652efabf27924b8a"
+  },
+  "nombre": "Reg1",
+  "apellido": "Reg1",
+  "usuario": "Reg1",
+  "contraseña": "$2b$10$TfxQf1a2Nve/IDQzOT1Li.SKU71tpc0L6NntKxJsBvTuHADN73hC.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6837c0e12020a78fb858e827"
+  },
+  "nombre": "FAW2",
+  "apellido": "FAW2",
+  "usuario": "FAW2",
+  "contraseña": "$2b$10$YVL6aC5AI5O4fudhbFuRCeni55KYd1pT8lreFGpI6nam2ScvvERjy",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68387fce7d517eeefddb6aec"
+  },
+  "nombre": "prueBAS",
+  "apellido": "prueBAS",
+  "usuario": "prueBAS",
+  "contraseña": "$2b$10$51J5HuoZqomXAKy.lZibuu/doeBKZqd30sKv3o8deXiRubI.xLjBC",
+  "__v": 0
+}]

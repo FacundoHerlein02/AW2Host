@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  mongo:
+    image: mongo
+    container_name: fastmotos-mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+  back:
+    build: ./AW2-backend
+    container_name: fastmotos-backend
+    ports:
+      - "5005:5005"
+    env_file:
+      - ./AW2-backend/.env
+    depends_on:
+      - mongo    
+    command: npm start
+  front:
+    image: nginx:alpine
+    container_name: fastmotos-frontend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./AW2-frontend:/usr/share/nginx/html:ro
+volumes:
+  mongo-data:

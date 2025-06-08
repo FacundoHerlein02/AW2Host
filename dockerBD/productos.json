@@ -1,0 +1,255 @@
+[{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef75"
+  },
+  "marca": "Honda",
+  "descripcion": "Honda xr150",
+  "precio": 12643.48,
+  "stock": 9,
+  "img": "https://http2.mlstatic.com/D_NQ_NP_633740-MLA77650635388_072024-O.webp",
+  "imagenes": [
+    "https://motos.honda.com.ar/uploads/modelos/72/images/slid_productoers/418_0s-0img-web-xr150l-2025-motor.jpg",
+    "https://motos.honda.com.ar/uploads/modelos/72/images/slid_productoers/419_0s-0img-web-xr150l-2025-segurid_productoad.jpg",
+    "https://motos.honda.com.ar/uploads/modelos/72/images/slid_productoers/420_0s-0img-web-xr150l-2025-tecnologia.jpg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef76"
+  },
+  "marca": "Honda",
+  "descripcion": "Honda xr300",
+  "precio": 22988.13,
+  "stock": 7,
+  "img": "https://http2.mlstatic.com/D_NQ_NP_638883-MLA85024423845_052025-O.webp",
+  "imagenes": [
+    "https://motos.honda.com.ar/uploads/modelos/63/images/slid_productoers/347_0s-0371-0s-0img-web-tornado-2024-motor.jpg",
+    "https://motos.honda.com.ar/uploads/modelos/63/images/slid_productoers/348_0s-0372-0s-0img-web-tornado-2024-transmision.jpg",
+    "https://motos.honda.com.ar/uploads/modelos/63/images/slid_productoers/351_1s-1376-1s-1img-web-tornado-2024-tecnologia-2.jpg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef77"
+  },
+  "marca": "Honda",
+  "descripcion": "Africa Twin",
+  "precio": 34482.2,
+  "stock": 8,
+  "img": "https://rubberdust.com/cdn/shop/products/Sliderbild-Honda-Africa-Twin-CRF1000L-Adventuresports-Neon-2.jpg?v=1674037186&width=823",
+  "imagenes": [
+    "https://motos.honda.com.ar/uploads/modelos/51/images/slid_productoers/265_0s-0img-web-africa-adventure-motor.jpg",
+    "https://motos.honda.com.ar/uploads/modelos/51/images/slid_productoers/372_1s-1img-web-africa-adventure-tecnologia.jpg",
+    "https://motos.honda.com.ar/uploads/modelos/51/images/slid_productoers/372_0s-0img-africa-twin-sport-faros.jpg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef78"
+  },
+  "marca": "Honda",
+  "descripcion": "cbr1000RR",
+  "precio": 57470.33,
+  "stock": 10,
+  "img": "https://www.mundomotero.com/wp-content/uploads/2022/10/honda-cbr-1000-rr-r-sp-2023-3.jpg",
+  "imagenes": [
+    "https://motos.honda.com.ar/uploads/modelos/58/images/slid_productoers/315_0s-0332-0s-0adrenalina-pura.jpg",
+    "https://motos.honda.com.ar/uploads/modelos/58/images/slid_productoers/316_0s-0333-0s-0tecnologia1.jpg",
+    "https://motos.honda.com.ar/uploads/modelos/58/images/slid_productoers/317_0s-0334-0s-0suspension.jpg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef79"
+  },
+  "marca": "Corven",
+  "descripcion": "Hunter 150r2",
+  "precio": 6522.57,
+  "stock": 9,
+  "img": "https://http2.mlstatic.com/D_NQ_NP_926038-MLA77114505866_062024-O.webp",
+  "imagenes": [
+    "https://http2.mlstatic.com/D_NQ_NP_750100-MLA77114496376_062024-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_835385-MLA77114338550_062024-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_727574-MLA77327832877_062024-F.webp"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef7a"
+  },
+  "marca": "Corven",
+  "descripcion": "Corven Expert 80cc",
+  "precio": 2609.03,
+  "stock": 10,
+  "img": "https://http2.mlstatic.com/D_NQ_NP_779690-MLA43516432163_092020-O.webp",
+  "imagenes": [
+    "https://http2.mlstatic.com/D_NQ_NP_969188-MLA43516432157_092020-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_634831-MLA43516432156_092020-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_841301-MLA43516432165_092020-O.webp"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef7b"
+  },
+  "marca": "Corven",
+  "descripcion": "TOURING 250",
+  "precio": 19567.69,
+  "stock": 10,
+  "img": "https://http2.mlstatic.com/D_NQ_NP_911569-MLA74059125859_012024-O.webp",
+  "imagenes": [
+    "https://http2.mlstatic.com/D_NQ_NP_827310-MLA74059125855_012024-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_885641-MLA74059125885_012024-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_656258-MLA74059125891_012024-O.webp"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef7c"
+  },
+  "marca": "Corven",
+  "descripcion": "Corven Triax TXR 250",
+  "precio": 15654.16,
+  "stock": 1,
+  "img": "https://http2.mlstatic.com/D_NQ_NP_706119-MLA73955314130_012024-O.webp",
+  "imagenes": [
+    "https://http2.mlstatic.com/D_NQ_NP_613343-MLA73955314118_012024-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_914801-MLA73955314116_012024-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_908017-MLA73955314136_012024-O.webp"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef7d"
+  },
+  "marca": "Motomel",
+  "descripcion": "Sirius 190",
+  "precio": 16009.94,
+  "stock": 3,
+  "img": "https://static.wixstatic.com/media/c1d2e4_a7e07128d118412e9414643d00374bdc~mv2.png/v1/fill/w_500,h_333,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/c1d2e4_a7e07128d118412e9414643d00374bdc~mv2.png",
+  "imagenes": [
+    "https://motomel.com.ar/wp-content/uploads/2019/07/Sirius190-1-845x684.jpg",
+    "https://motomel.com.ar/wp-content/uploads/2019/07/Sirius190-5-845x684.jpg",
+    "https://motomel.com.ar/wp-content/uploads/2019/07/Sirius190-9-845x684.jpg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef7e"
+  },
+  "marca": "Motomel",
+  "descripcion": "Blitz 110 V8 Automática",
+  "precio": 10045.98,
+  "stock": 15,
+  "img": "https://dcdn-us.mitiendanube.com/stores/002/819/620/products/blitz-110-one-rt-blanco1-32de1ee155f5078afc16858006206977-1024-1024.webp",
+  "imagenes": [
+    "https://motomel.com.ar/wp-content/uploads/2023/11/2_230429-Motomel-Dia-3-0301-845x684.jpg",
+    "https://motomel.com.ar/wp-content/uploads/2023/11/3_230429-Motomel-Dia-3-0238-845x684.jpg",
+    "https://motomel.com.ar/wp-content/uploads/2023/11/5_230429-Motomel-Dia-3-0235-845x684.jpg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef7f"
+  },
+  "marca": "Motomel",
+  "descripcion": "XMM 250",
+  "precio": 30093.58,
+  "stock": 4,
+  "img": "https://motos0km.com.ar/models/motomel-xmm-250-gallery-ffffff-020180510183118.jpg",
+  "imagenes": [
+    "https://motomel.com.ar/wp-content/uploads/2021/09/MOTOMEL_XMM_250_2020_DETALLES_05-845x684.jpeg",
+    "https://motomel.com.ar/wp-content/uploads/2021/09/MOTOMEL_XMM_250_2020_DETALLES_04-845x684.jpeg",
+    "https://motomel.com.ar/wp-content/uploads/2021/09/MOTOMEL_XMM_250_2020_DETALLES_09-845x684.jpeg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef80"
+  },
+  "marca": "Motomel",
+  "descripcion": "Motomel Scooter 150",
+  "precio": 20160.66,
+  "stock": 6,
+  "img": "https://cyclemotorshopar.vtexassets.com/arquivos/ids/326780-1200-auto?v=638639331682970000&width=1200&height=auto&aspect=true",
+  "imagenes": [
+    "https://motomel.com.ar/wp-content/uploads/2024/03/detalle2-845x684.jpg",
+    "https://motomel.com.ar/wp-content/uploads/2024/03/detalle3-845x684.jpg",
+    "https://motomel.com.ar/wp-content/uploads/2024/03/detalle5-845x684.jpg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef81"
+  },
+  "marca": "Kawasaki",
+  "descripcion": "Vulcan S",
+  "precio": 41092.16,
+  "stock": 2,
+  "img": "https://kawasaki.ar/wp-content/uploads/2022/06/22MY_Vulcan_S__BK1_STU__2_.jpeg",
+  "imagenes": [
+    "https://kawasaki.ar/wp-content/uploads/2022/06/22MY_Vulcan-S_-GY1_ACT-13.001.jpg",
+    "https://kawasaki.ar/wp-content/uploads/2022/06/22MY_Vulcan-S_-GY1_ACT-5.002.jpg",
+    "https://kawasaki.ar/wp-content/uploads/2022/06/22MY_Vulcan_S__GY1_ACT__12_.jpeg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef82"
+  },
+  "marca": "Kawasaki",
+  "descripcion": "KX 450F",
+  "precio": 31699.67,
+  "stock": 6,
+  "img": "https://motos0km.com.ar/models/kawasaki-kx-450f-gallery-3e892f-020180615180810.jpg",
+  "imagenes": [
+    "https://kawasaki.ar/wp-content/uploads/2022/06/22MY_KX450_GN1_STU__2_.jpeg",
+    "https://kawasaki.ar/wp-content/uploads/2022/06/22MY_KX450_GN1_ACT__2_.jpeg",
+    "https://kawasaki.ar/wp-content/uploads/2022/06/22MY_KX450_GN1_ACT__4_.jpeg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef83"
+  },
+  "marca": "Kawasaki",
+  "descripcion": "Ninja ZX-14R",
+  "precio": 146757.73,
+  "stock": 5,
+  "img": "https://comprarmoto.com.ar/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2024/02/9bc90d8e-89c8-442a-a10e-575fa6d3d709-600x400.jpeg.webp",
+  "imagenes": [
+    "https://kawasaki.ar/wp-content/uploads/2022/07/9bc90d8e-89c8-442a-a10e-575fa6d3d709.jpeg",
+    "https://kawasaki.ar/wp-content/uploads/2022/07/f8a193a4-fa4f-4a5e-a2e4-62ab66e95b27-1.jpeg",
+    "https://kawasaki.ar/wp-content/uploads/2022/07/ed6d13c7-9956-4791-a29b-03e228471806-2.jpeg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef84"
+  },
+  "marca": "BMW",
+  "descripcion": "BMW S1000-RR2",
+  "precio": 100803.29,
+  "stock": 2,
+  "img": "https://www.motofichas.com/images/phocagallery/BMW_Motorrad/s-1000-rr-2025/10-bmw-s-1000-rr-2025-estudio-blanco-02.jpg",
+  "imagenes": [
+    "https://www.twobrothersracing.com.au/wp-content/uploads/2018/11/11-web_507c76fa-a8bf-4585-98e6-ffb004082aff_1024x1024.jpg",
+    "https://www.twobrothersracing.com.au/wp-content/uploads/2018/11/12-web_angled_1024x1024.jpg",
+    "https://www.motorcycleraceparts.co.uk/media/catalog/product/cache/d9713d26912e5f1b96deac8d541bc056/a/r/arrow_bmw_s1000rr_12_full_low_2.jpg"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6833b8c9ca37eea98ac0ef85"
+  },
+  "marca": "Corven",
+  "descripcion": "Corven 110 Mirage Base",
+  "precio": 11829.32,
+  "stock": 3,
+  "img": "https://http2.mlstatic.com/D_NQ_NP_722784-MLA83783807070_042025-O.webp",
+  "imagenes": [
+    "https://http2.mlstatic.com/D_NQ_NP_746302-MLA83783836656_042025-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_727076-MLA84077553737_042025-O.webp",
+    "https://http2.mlstatic.com/D_NQ_NP_2X_681825-MLA83783985726_042025-F.webp"
+  ]
+}]
