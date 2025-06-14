@@ -1,5 +1,6 @@
 import {Router} from "express";
 import dotenv from 'dotenv';
+dotenv.config()
 //SDK de Mercado Pago
 import { MercadoPagoConfig, Preference , Payment} from 'mercadopago';
 const router= Router();
