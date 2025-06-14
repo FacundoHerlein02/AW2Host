@@ -9,7 +9,7 @@ Stack
         jsonwebtoken ^9.0.2
         mongoose ^8.15.0
         nodemon ^3.1.9
-    Front-En 
+    Front-End 
         Tailwind CSS
     DataBase
         MongoDB

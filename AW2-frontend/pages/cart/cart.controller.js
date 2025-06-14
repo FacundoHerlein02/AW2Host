@@ -1,21 +1,71 @@
 import {cardsCart,detalleVenta,calcularTotal} from "../../components/cardCart.component.js";
 import {NuevaVenta} from "../../api/ventas.api.js";
-import {DecodeIdUser} from "../../api/usuarios.api.js"
-import {navbar,navbarEventos} from"/components/navbar.component.js"
+import {DecodeIdUser} from "../../api/usuarios.api.js";
+import {createOrder} from '../../api/payment.api.js';
+
+import {navbar,navbarEventos} from"/components/navbar.component.js";
 import {footer} from"/components/footer.component.js";
+import {DetalleVenta} from "/components/detalleVenta.component.js"
+import {ResultSuccess,ResultFailure,ResultPending} from '/components/paymentResult.component.js';
+
+
 const cartContainer=document.getElementById('ContainerProductos');
-const detalleContainer=document.getElementById('detalleContainer');
-const total= document.getElementById('totalCarrito');
 const footerContainer= document.getElementById('footerContainer');
 const navContainer= document.getElementById('headerContainer');
-document.addEventListener('DOMContentLoaded',async()=>{     
+const detalleVentaContainer= document.getElementById('detVenta');
+//Variables detalle compra
+let detalleContainer=''
+let total='' 
+document.addEventListener('DOMContentLoaded',async()=>{    
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get('status');
     navContainer.innerHTML=navbar;
     footerContainer.innerHTML=footer;
-    let productos= obtenerProductos();
-    ActualizarCarrito(productos);
-    //LLama aparte para que no se asignen multiples listener
-    EventobtnComprar();
-    navbarEventos();              
+    //Evento de cerrar Sesion
+    navbarEventos()
+    if(status === 'success') 
+    {
+        //Oculta los containers que no uso
+        detalleVentaContainer.classList.add('hidden');
+        cartContainer.classList.add('hidden');  
+        const mainElement = document.getElementById('mainContainer');
+        mainElement.className = 'flex flex-row justify-center min-h-100  2xl:p-10';
+        mainElement.innerHTML=ResultSuccess;
+       //Borra los productos del carrito
+        localStorage.removeItem('carrito');                           
+    }
+    else if(status === 'failure')
+    {
+        //Oculta los containers que no uso
+        detalleVentaContainer.classList.add('hidden');
+        cartContainer.classList.add('hidden');  
+        const mainElement = document.getElementById('mainContainer');
+        mainElement.className = 'flex flex-row justify-center min-h-100  2xl:p-10';
+        mainElement.innerHTML=ResultFailure;
+        //Permite reintentar el pago
+        EventobtnComprar();
+        alert("fallo") 
+    }
+    else if(status === 'pending')
+    {
+        //Oculta los containers que no uso
+        detalleVentaContainer.classList.add('hidden');
+        cartContainer.classList.add('hidden');  
+        const mainElement = document.getElementById('mainContainer');
+        mainElement.className = 'flex flex-row justify-center min-h-100  2xl:p-10';
+        mainElement.innerHTML=ResultPending;
+        alert("pendiente") 
+    }
+    else{      
+        detalleVentaContainer.innerHTML=DetalleVenta;
+        detalleContainer=document.getElementById('detalleContainer');
+        total= document.getElementById('totalCarrito');
+        let productos= obtenerProductos();
+        ActualizarCarrito(productos);
+        //LLama aparte para que no se asignen multiples listener
+        EventobtnComprar();        
+    }    
+                  
 });
 function ActualizarCarrito(productos){
     if (productos?.error || productos.result.length === 0) {
@@ -106,37 +156,63 @@ function asignarEventosCarrito() {
 function EventobtnComprar(){  
     const btnComprar= document.querySelector('.btnComprar');
     btnComprar.addEventListener('click',async()=>{        
-        const token= sessionStorage.getItem('usuario');               
-        const idUser = await DecodeIdUser(token);        
-        const productos= obtenerProductos();        
+        const token= sessionStorage.getItem('usuario');
+        //Pasa el id de cliente               
+        const idUser = await DecodeIdUser(token);
+        const id_cliente=idUser.id;
+        //pasa los productos        
+        const productos= obtenerProductos();
+        //Pasa la fecha
+        const fecha=dayjs().format('DD/MM/YYYY')        
         if (!productos || !productos.result || productos.result.length === 0) {
             alert("El carrito está vacío. Agregue productos antes de comprar.");
             return;
         }
-        const venta={
-            fecha:dayjs().format('DD/MM/YYYY'),
-            id_cliente:idUser.id,
-            prods:productos.result.map((p)=>({
-                idProd: p.id,
-                cantidad: p.cantidad
-            }))
-        };        
-        const ventaNueva= await NuevaVenta(venta);
-        if(ventaNueva.error)
+        //Crea la ORDEN DE PAGO        
+        const ordenPago= await createOrder(productos,id_cliente,fecha)
+        alert(ordenPago)       
+        if(ordenPago.init_point)
         {
-            return alert(`Error al obtener la venta: ${ventaNueva.error}`);
-        }
-        if (!ventaNueva || !ventaNueva.NuevaVenta){
-            return alert("Error: La respuesta de la venta es inválida.");
-        }    
-        console.log(JSON.stringify(ventaNueva, null, 2));        
-        //Borra los productos del carrito
-        localStorage.removeItem('carrito');
-        alert("Gracias por su compra!")        
-        let carritoObj=obtenerProductos();                 
-        ActualizarCarrito(carritoObj);        
+            alert(ordenPago.init_point)
+            //Redirige a la pagina de pago
+            window.location.href = ordenPago.init_point;            
+        }               
     });
 };
+// function EventobtnComprar(){  
+//     const btnComprar= document.querySelector('.btnComprar');
+//     btnComprar.addEventListener('click',async()=>{        
+//         const token= sessionStorage.getItem('usuario');               
+//         const idUser = await DecodeIdUser(token);        
+//         const productos= obtenerProductos();        
+//         if (!productos || !productos.result || productos.result.length === 0) {
+//             alert("El carrito está vacío. Agregue productos antes de comprar.");
+//             return;
+//         }
+//         const venta={
+//             fecha:dayjs().format('DD/MM/YYYY'),
+//             id_cliente:idUser.id,
+//             prods:productos.result.map((p)=>({
+//                 idProd: p.id,
+//                 cantidad: p.cantidad
+//             }))
+//         };        
+//         const ventaNueva= await NuevaVenta(venta);
+//         if(ventaNueva.error)
+//         {
+//             return alert(`Error al obtener la venta: ${ventaNueva.error}`);
+//         }
+//         if (!ventaNueva || !ventaNueva.NuevaVenta){
+//             return alert("Error: La respuesta de la venta es inválida.");
+//         }    
+//         console.log(JSON.stringify(ventaNueva, null, 2));        
+//         //Borra los productos del carrito
+//         localStorage.removeItem('carrito');
+//         alert("Gracias por su compra!")        
+//         let carritoObj=obtenerProductos();                 
+//         ActualizarCarrito(carritoObj);        
+//     });
+// };
 //Lee los productos del LocalStorage
 function obtenerProductos(){
     const productosCarritoJSON = localStorage.getItem('carrito');

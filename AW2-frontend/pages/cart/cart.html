@@ -13,21 +13,13 @@
     <header id="headerContainer">
 
     </header>
-    <main class="flex flex-col xl:flex-row min-h-150">
+    <main id="mainContainer" class="flex flex-col xl:flex-row min-h-150">
         <section class="grid grid-cols-1 sm:grid-cols-2 sm:w-full  lg:grid-cols-3 gap-10 p-12 xl:w-4/5 xl:gap-5" id="ContainerProductos">
             <!-- CARDS -->               
-        </section>      
-                          
-        <section class="flex flex-col items-center p-5 bg-gray-100 rounded-2xl xl:sticky top-0 xl:h-fit">              
-            <label class="text-4xl font-semibold pb-10 xl:pb-2">SubTotal</label>
-            <div id="detalleContainer" class=" flex flex-col min-h-20 border-t-2 border-b-2">
-                <!-- Detalle de las ventas -->                    
-            </div>
-            <label class="text-4xl font-bold pb-10 xl:pt-3 xl:pb-3">Total</label>
-            <label id="totalCarrito" class="text-3xl font-bold pb-10 xl:pb-2"></label>                      
-            <button class="btnComprar  bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-500 hover:scale-105 transition-transform" type="button">Finalizar compra</button>   
-        </section>            
-                      
+        </section>
+        <section id="detVenta" class="flex flex-col items-center p-5 bg-gray-100 rounded-2xl xl:sticky top-0 xl:h-fit">
+            <!-- DETALLE DE LA VENTA -->
+        </section>        
     </main>
     <footer id="footerContainer" class="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
         <!-- FOOTER -->

@@ -181,7 +181,8 @@ router.post('/newVenta',async(req,res)=>{
                 total += subtotal;
             }
             //Redondea
-            total = Math.round(total * 100) / 100;            
+            total = Math.round(total * 100) / 100;
+            //Aplica en la base de datos            
             const NuevaVenta= await newVenta({fecha,id_cliente,productos,total});
             console.log(NuevaVenta)                              
             res.status(201).json({mensaje: "Venta realizada con éxito",NuevaVenta});
