@@ -17,9 +17,10 @@ app.use(express.json());
 //Muestra en consola las peticiones al server
 app.use(morgan('dev'))
 
-app.use(cors({
-    origin:'https://fastmotos.netlify.app/'
-}))
+// app.use(cors({
+//     origin:'https://fastmotos.netlify.app/'
+// }))
+app.use(cors());
 
 /*RUTAS DE USUARIOS*/
 app.use('/usuarios',usuariosRouter)
