@@ -35,7 +35,7 @@ router.post('/createOrder',async (req,res)=>{
         const preference = new Preference(client);
         const result=await preference.create({
                     body: {
-                        notification_url:'https://1c0b-170-79-19-14.ngrok-free.app/payment/webHook',
+                        notification_url:`${process.env.api}/payment/webHook`,
                         auto_return: "approved",
                         back_urls:{
                             success: 'https://fastmotos.netlify.app/pages/cart/cart.html?status=success',
@@ -90,7 +90,7 @@ router.post('/webHook',async(req,res)=>{
                         idProd:p.id_prod
                     }));                    
                     console.log(id_cliente, prodsNormalizados, fecha)                    
-                    const response = await fetch('http://localhost:5005/ventas/newVenta', {
+                    const response = await fetch(`${process.env.api}/ventas/newVenta`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
