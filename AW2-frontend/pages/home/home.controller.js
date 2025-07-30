@@ -12,8 +12,7 @@ const containerfiltroMarcas= document.getElementById('filtroMarca');
 let productos;
 let cardsHTML;
 document.addEventListener('DOMContentLoaded', async () => {
-    //Valida el usuario e inserta el navbar que corresponde
-    alert("obtengo")
+    //Valida el usuario e inserta el navbar que corresponde    
     await obtenerUsuario ();
     //navContainer.innerHTML=navbar;
     footerContainer.innerHTML=footer;
@@ -89,25 +88,21 @@ function agregarAlCarrito(moto) {
     localStorage.setItem('carrito', JSON.stringify(carrito));      
 };
 //Obtiene el usuario y valida si es admin
-async function obtenerUsuario (){
-    alert("obtengo")
+async function obtenerUsuario (){    
     const token= sessionStorage.getItem('usuario')
     if(token)
     {
         const usuario = await DecodeUser(token);
-        console.log(usuario)
-        alert("comparo")
+        console.log(usuario)        
         if(usuario.user.usuario==="Admin" && usuario.user.id==="688a532a72a1f2908db9371b")
-        {
-            alert("admin")
+        {            
             //Inserta nav Admin            
             navContainer.innerHTML=navbarAdmin;
             //Evento de cerrar Sesion
             navbarEventosAdmin();
         }
         else
-        {
-            alert("comun")
+        {            
             //Inserta nav Comun
             navContainer.innerHTML=navbar;
             //Evento de cerrar Sesion
