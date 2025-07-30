@@ -13,6 +13,7 @@ let productos;
 let cardsHTML;
 document.addEventListener('DOMContentLoaded', async () => {
     //Valida el usuario e inserta el navbar que corresponde
+    alert("obtengo")
     await obtenerUsuario ();
     //navContainer.innerHTML=navbar;
     footerContainer.innerHTML=footer;
