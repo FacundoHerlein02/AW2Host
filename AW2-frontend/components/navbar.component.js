@@ -38,6 +38,6 @@ export function navbarEventos() {
       sessionStorage.removeItem('usuario'); // Eliminar datos del usuario
       alert("Sesión cerrada");
       window.location.href = '/index.html'; // Redirigir al login
-    }); 
+    });    
 }; 
         

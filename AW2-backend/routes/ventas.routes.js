@@ -1,6 +1,6 @@
 import  { Router } from 'express';
 //Acciones Ventas
-import {newVenta,getAllVentas,ventaByid,updateVenta,deleteVentasId} from '../db/actions/ventas.actions.js';
+import {newVenta,getAllVentas,getVentasFecha,ventaByid,updateVenta,deleteVentasId} from '../db/actions/ventas.actions.js';
 //Acciones Productos
 import {motosId,updateStock} from '../db/actions/productos.actions.js'
 //Acciones Usuarios
@@ -56,6 +56,63 @@ router.get('/getAllVentas', async(req, res) => {
             res.status(200).json(result);
         } else {
             res.status(404).json(`No se encontraron ventas.`);
+        }
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ error: "Error del servidor." });
+    }
+});
+//Trae ventas por fecha
+router.post('/getVentasFecha',async(req,res)=>{
+    const{desde,hasta}=req.body
+    try {
+        await connectDataBase();
+        if (!desde || !hasta) 
+        {
+            return res.status(400).json({ error: "Faltan parámetros de fecha" });
+        }
+        //Carga las ventas en la variable
+        let ventas=await getVentasFecha(desde,hasta);
+        const result = [];
+        for (const e of ventas) {
+            let user;            
+            try {
+                user =await userById({ id: e.id_cliente });                
+            } catch (error) {
+                return res.status(400).json({ error: error.message });
+            }
+            if(!user)
+            {
+                return res.status(404).json({error:"Usuario no encontrado"})
+            }
+            let productosDetalle;
+            try {
+                productosDetalle =await Promise.all( e.productos.map(async(item )=> {
+                    const prod =await motosId(item.id_producto);
+                    console.log(prod)
+                    return {                        
+                        Marca: prod.marca,
+                        Descripcion: prod.descripcion,
+                        Cantidad: item.cantidad,
+                        Subtotal:'$'+ item.subtotal
+                    };
+                }));
+            } catch (error) {
+                return res.status(400).json({ error: error.message });
+            }
+
+            result.push({
+                Fecha: e.fecha,
+                Cliente: user.nombre + ' ' + user.apellido,
+                Productos: productosDetalle,
+                Total:'$'+ e.total
+            });
+        }
+
+        if (result.length > 0) {
+            res.status(200).json(result);
+        } else {
+            res.status(404).json({error:`No se encontraron ventas.`});
         }
     } catch (error) {
         console.log(error)

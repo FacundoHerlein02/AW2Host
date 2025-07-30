@@ -188,7 +188,7 @@ router.put('/updatePrecio',async(req,res)=>{
         const {id,marca,porcentaje}= req.body;
         //Valida que se ingrese un numero
         if (typeof porcentaje !== 'number') {
-            return res.status(400).json("Porcentaje inválido");
+            return res.status(400).json({error:"Porcentaje inválido"});
         }
         let precioNuevo
         //Actualiza por id
@@ -197,13 +197,13 @@ router.put('/updatePrecio',async(req,res)=>{
             const moto= await motosId(id);
             if(!moto)
             {
-                return res.status(404).json("Moto no encontrada");
+                return res.status(404).json({error:"Moto no encontrada"});
             }
             else
             {              
                 precioNuevo = Math.round((moto.precio + (moto.precio * (porcentaje / 100))) * 100) / 100;   
                 if (precioNuevo <= 0) {
-                    return res.status(400).json("No se permite precio negativo");
+                    return res.status(400).json({error:"No se permite precio negativo"});
                 }                             
                 moto.precio=precioNuevo
                 const MotoActualizada=await updateMoto(id,moto)   
@@ -217,7 +217,7 @@ router.put('/updatePrecio',async(req,res)=>{
             const motos= await motosMarca(marca);
             if(!motos)
             {
-                return res.status(404).json("Marca no encontrada");
+                return res.status(404).json({error:"Marca no encontrada"});
             }
             else
             {                
@@ -228,11 +228,11 @@ router.put('/updatePrecio',async(req,res)=>{
                     return precioNuevo <= 0;
                 });
                 if (preciosInvalidos) {
-                    return res.status(400).json("No se permite precio negativo");
+                    return res.status(400).json({error:"No se permite precio negativo"});
                 }
                 //Actualiza por marca
                 await updatePrecioPorMarca(marca, factor);
-                res.status(200).json("Precios actualizados correctamente");
+                res.status(200).json({mensaje:"Precios actualizados correctamente"});
             }
         }
         //Actualiza todos
@@ -245,10 +245,10 @@ router.put('/updatePrecio',async(req,res)=>{
                 return precioNuevo <= 0;
             });
             if (preciosInvalidos) {
-                return res.status(400).json("No se permite precio negativo");
+                return res.status(400).json({error:"No se permite precio negativo"});
             }
             await updatePrecioGeneral(factor)       
-            return res.status(200).json("Precios actualizados correctamente");
+            return res.status(200).json({mensaje:"Precios actualizados correctamente"});
         }       
     } 
     catch (error) 

@@ -21,6 +21,41 @@ export const getAllVentas=async()=>{
         console.log(error);
     }
 };
+//Trae ventas por fecha
+export const getVentasFecha = async (desde, hasta) => {
+  try {
+    await connectDataBase();
+
+    // Paso 1: convertir fechas "DD/MM/YYYY" a "YYYYMMDD"
+    const desdeStr = desde.split('-').join(''); // "25/05/2025" -> ["25","05","2025"] -> ["2025","05","25"] -> "20250525"
+    const hastaStr = hasta.split('-').join('');
+    const Res = await Venta.aggregate([
+      {
+        $addFields: {
+          fechaStringComparable: {
+            $concat: [
+              { $substr: ["$fecha", 6, 4] }, // año
+              { $substr: ["$fecha", 3, 2] }, // mes
+              { $substr: ["$fecha", 0, 2] }  // día
+            ]
+          }
+        }
+      },
+      {
+        $match: {
+          fechaStringComparable: {
+            $gte: desdeStr,
+            $lte: hastaStr
+          }
+        }
+      }
+    ]);
+
+    return JSON.parse(JSON.stringify(Res));
+  } catch (error) {
+    console.log(error);
+  }
+};
 export const ventaByid=async(id)=>{
     try {
         await connectDataBase();

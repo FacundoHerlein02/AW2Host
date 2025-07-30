@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="icon" href="/resource/img/favicon.png">
+    <title>Administrar Ventas</title>
+</head>
+<body>
+    <header id="headerContainer">
+        <!-- NAVBAR -->
+    </header>
+    <main class="divVentas">
+        <div class="flex flex-col lg:flex-row items-center min-h-screen bg-gray-100 p-4 gap-4">
+            <!-- Filtros (lado izquierdo) -->
+            <aside class=" flex flex-col w-10/12 sm:w-8/12 lg:w-3/12 lg:min-h-screen bg-white rounded-xl shadow p-4 space-y-4">
+                <h2 class="text-xl font-semibold border-b pb-2">Filtros</h2>
+
+                <!-- Fecha desde -->
+                <div>
+                <label for="fechaDesde" class="block text-sm font-medium text-gray-700">Desde</label>
+                <input type="date" id="fechaDesde" class="mt-1 w-full border rounded px-2 py-1" />
+                </div>
+
+                <!-- Fecha hasta -->
+                <div>
+                <label for="fechaHasta" class="block text-sm font-medium text-gray-700">Hasta</label>
+                <input type="date" id="fechaHasta" class="mt-1 w-full border rounded px-2 py-1" />
+                </div>
+
+                <!-- Botón aplicar filtro -->
+                <button id="btnFiltrar" class="active:scale-95 bg-green-400  font-semibold px-4 py-2 rounded hover:bg-green-600 w-full">
+                    Filtrar
+                </button>
+                <span id="spinnerProductos" class="hidden self-center ml-2 border-2 border-t-2 border-t-white border-green-700 rounded-full w-5 h-5 animate-spin"></span>
+            </aside>
+            <!-- Listado de ventas (lado derecho) -->
+            <main class="w-11/12 flex-1 lg:min-h-screen bg-white rounded-xl shadow p-4 overflow-auto">
+                <h2 class="text-2xl font-bold mb-4">Listado de Ventas</h2>
+
+                <table class="min-w-full text-sm text-left border border-gray-200">
+                    <thead class="bg-stone-200 font-semibold">
+                        <tr>
+                        <th class="p-2 border">Fecha</th>
+                        <th class="p-2 border">Cliente</th>
+                        <!-- <th class="p-2 border">Producto</th> -->
+                        <th class="p-2 border">Marca</th>
+                        <th class="p-2 border">Descripción</th>
+                        <th class="p-2 border">Cant.</th>
+                        <th class="p-2 border">Subtotal</th>
+                        <th class="p-2 border">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaVentas">
+                        <!-- Filas se cargan dinámicamente -->                        
+                    </tbody>
+                </table>
+            </main>
+        </div>
+    </main>
+    <footer id="footerContainer" class="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
+        <!-- FOOTER -->
+    </footer>    
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script type="module" src="./ventas.controller.js"></script>
+</body>
+</html>
