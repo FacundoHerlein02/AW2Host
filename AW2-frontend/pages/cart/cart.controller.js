@@ -233,10 +233,12 @@ async function obtenerUsuario (){
     {
         const usuario = await DecodeUser(token);
         console.log(usuario)
+        alert("Adminnnn")
         if(usuario.user.usuario==="Admin" && usuario.user.id==="688a532a72a1f2908db9371b")
         {
             //Inserta nav Admin            
             navContainer.innerHTML=navbarAdmin;
+            alert("Adminnnn")
             //Evento de cerrar Sesion
             navbarEventosAdmin();
         }
