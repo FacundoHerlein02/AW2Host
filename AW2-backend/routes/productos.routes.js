@@ -124,13 +124,13 @@ router.post('/newMoto',async (req,res)=>{
         await connectDataBase()
         if(!marca||!descripcion||!precio||!stock||!img||!imagenes)
         {
-            return res.status(401).json("Faltan completar campos");
+            return res.status(401).json({error:"Faltan completar campos"});
         }
         else
         {        
             const NuevaMoto= await newMoto({marca,descripcion,precio,stock,img,imagenes})
             console.log(NuevaMoto);
-            res.status(201).json(NuevaMoto);
+            res.status(201).json({mensaje:"Producto creado correctamente!",NuevaMoto});
         }
     } catch (error) {
         res.status(500).json({ error: "Error del servidor" });
