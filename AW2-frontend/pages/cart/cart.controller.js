@@ -233,7 +233,7 @@ async function obtenerUsuario (){
     {
         const usuario = await DecodeUser(token);
         console.log(usuario)
-        if(usuario.user.usuario==="Admin" && usuario.user.id==="68581368f5d17f5825247d66")
+        if(usuario.user.usuario==="Admin" && usuario.user.id==="688a532a72a1f2908db9371b")
         {
             //Inserta nav Admin            
             navContainer.innerHTML=navbarAdmin;
