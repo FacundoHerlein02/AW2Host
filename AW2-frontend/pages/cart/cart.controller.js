@@ -1,9 +1,10 @@
 import {cardsCart,detalleVenta,calcularTotal} from "../../components/cardCart.component.js";
 import {NuevaVenta} from "../../api/ventas.api.js";
-import {DecodeIdUser} from "../../api/usuarios.api.js";
+import {DecodeIdUser,DecodeUser} from "../../api/usuarios.api.js";
 import {createOrder} from '../../api/payment.api.js';
 
 import {navbar,navbarEventos} from"/components/navbar.component.js";
+import {navbarAdmin,navbarEventosAdmin} from "/components/navbarAdmin.component.js"
 import {footer} from"/components/footer.component.js";
 import {DetalleVenta} from "/components/detalleVenta.component.js"
 import {ResultSuccess,ResultFailure,ResultPending} from '/components/paymentResult.component.js';
@@ -19,7 +20,8 @@ let total=''
 document.addEventListener('DOMContentLoaded',async()=>{    
     const urlParams = new URLSearchParams(window.location.search);
     const status = urlParams.get('status');
-    navContainer.innerHTML=navbar;
+    //Valida el usuario e inserta el navbar que corresponde
+    await obtenerUsuario();  
     footerContainer.innerHTML=footer;
     //Evento de cerrar Sesion
     navbarEventos()
@@ -223,4 +225,27 @@ function obtenerProductos(){
     const productosCarrito = JSON.parse(productosCarritoJSON);
     const productos = { result: productosCarrito };
     return productos
+};
+//Obtiene el usuario y valida si es admin
+async function obtenerUsuario (){
+    const token= sessionStorage.getItem('usuario')
+    if(token)
+    {
+        const usuario = await DecodeUser(token);
+        console.log(usuario)
+        if(usuario.user.usuario==="Admin" && usuario.user.id==="68581368f5d17f5825247d66")
+        {
+            //Inserta nav Admin            
+            navContainer.innerHTML=navbarAdmin;
+            //Evento de cerrar Sesion
+            navbarEventosAdmin();
+        }
+        else
+        {
+            //Inserta nav Comun
+            navContainer.innerHTML=navbar;
+            //Evento de cerrar Sesion
+            navbarEventos();            
+        }
+    };
 };

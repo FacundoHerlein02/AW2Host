@@ -1,7 +1,9 @@
 import {filtro} from "../../components/filtroMarca.component.js"
 import{getAllProductos,getProductosMarca,getProductosId} from"../../api/productos.api.js";
 import {cards} from "../../components/cards.component.js"
+import {DecodeUser} from "../../api/usuarios.api.js";
 import {navbar,navbarEventos} from"/components/navbar.component.js"
+import {navbarAdmin,navbarEventosAdmin} from "/components/navbarAdmin.component.js"
 import {footer} from"/components/footer.component.js";
 const footerContainer= document.getElementById('footerContainer');
 const navContainer= document.getElementById('headerContainer');
@@ -10,7 +12,9 @@ const containerfiltroMarcas= document.getElementById('filtroMarca');
 let productos;
 let cardsHTML;
 document.addEventListener('DOMContentLoaded', async () => {
-    navContainer.innerHTML=navbar;
+    //Valida el usuario e inserta el navbar que corresponde
+    await obtenerUsuario ();
+    //navContainer.innerHTML=navbar;
     footerContainer.innerHTML=footer;
     //Carga todos los productos
     productos= await getAllProductos()    
@@ -82,5 +86,28 @@ function agregarAlCarrito(moto) {
     }
     // Guardamos el carrito actualizado
     localStorage.setItem('carrito', JSON.stringify(carrito));      
-}
+};
+//Obtiene el usuario y valida si es admin
+async function obtenerUsuario (){
+    const token= sessionStorage.getItem('usuario')
+    if(token)
+    {
+        const usuario = await DecodeUser(token);
+        console.log(usuario)
+        if(usuario.user.usuario==="Admin" && usuario.user.id==="68581368f5d17f5825247d66")
+        {
+            //Inserta nav Admin            
+            navContainer.innerHTML=navbarAdmin;
+            //Evento de cerrar Sesion
+            navbarEventosAdmin();
+        }
+        else
+        {
+            //Inserta nav Comun
+            navContainer.innerHTML=navbar;
+            //Evento de cerrar Sesion
+            navbarEventos();            
+        }
+    };
+};
 
