@@ -89,13 +89,16 @@ function agregarAlCarrito(moto) {
 };
 //Obtiene el usuario y valida si es admin
 async function obtenerUsuario (){
+    alert("obtengo")
     const token= sessionStorage.getItem('usuario')
     if(token)
     {
         const usuario = await DecodeUser(token);
         console.log(usuario)
+        alert("comparo")
         if(usuario.user.usuario==="Admin" && usuario.user.id==="688a532a72a1f2908db9371b")
         {
+            alert("admin")
             //Inserta nav Admin            
             navContainer.innerHTML=navbarAdmin;
             //Evento de cerrar Sesion
@@ -103,6 +106,7 @@ async function obtenerUsuario (){
         }
         else
         {
+            alert("comun")
             //Inserta nav Comun
             navContainer.innerHTML=navbar;
             //Evento de cerrar Sesion
