@@ -160,8 +160,27 @@ router.post('/tokenId',async(req,res)=>{
         res.status(500).json({error:"Error del servidor."});
     }
 });
+router.post('/decodeUser',async(req,res)=>{
+    const {token}= req.body
+    try {        
+        if(!token)
+        {
+           return res.status(401).json({error:"Token invalido"})
+        }
+        console.log(token);
+        const usuarioDecode= decodeToken(token);        
+        if(!usuarioDecode)
+        {
+           return res.status(401).json({error:"Error al decodificar"})
+        }
+        const user= usuarioDecode
+        return res.status(200).json({ mensaje: "Usuario encontrado", user});
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({error:"Error del servidor."});
+    }
+});
 //PUT
-
 //Cambio de clave
 router.put('/updateClave',async(req,res)=>{
     try
