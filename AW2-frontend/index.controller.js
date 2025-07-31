@@ -17,7 +17,7 @@ function renderLoginForm() {
     if (frmLogin) {
         frmLogin.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const submitButton = frmRegister.querySelector('input[type="submit"]');
+            const submitButton = frmLogin.querySelector('input[type="submit"]');
             const spinner = document.getElementById('spinnerLogin');
             submitButton.value = 'Iniciando Sesión...'; 
             submitButton.disabled = true; 
