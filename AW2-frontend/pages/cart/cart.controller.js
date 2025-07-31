@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
     await obtenerUsuario();  
     footerContainer.innerHTML=footer;
     //Evento de cerrar Sesion
-    navbarEventos()
+    //navbarEventos()
     if(status === 'success') 
     {
         //Oculta los containers que no uso
