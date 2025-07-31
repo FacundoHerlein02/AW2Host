@@ -45,8 +45,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
         mainElement.className = 'flex flex-row justify-center min-h-100  2xl:p-10';
         mainElement.innerHTML=ResultFailure;
         //Permite reintentar el pago
-        EventobtnComprar();
-        alert("fallo") 
+        EventobtnComprar();        
     }
     else if(status === 'pending')
     {
@@ -55,8 +54,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
         cartContainer.classList.add('hidden');  
         const mainElement = document.getElementById('mainContainer');
         mainElement.className = 'flex flex-row justify-center min-h-100  2xl:p-10';
-        mainElement.innerHTML=ResultPending;
-        alert("pendiente") 
+        mainElement.innerHTML=ResultPending;         
     }
     else{      
         detalleVentaContainer.innerHTML=DetalleVenta;
@@ -171,11 +169,9 @@ function EventobtnComprar(){
             return;
         }
         //Crea la ORDEN DE PAGO        
-        const ordenPago= await createOrder(productos,id_cliente,fecha)
-        alert(ordenPago)       
+        const ordenPago= await createOrder(productos,id_cliente,fecha)               
         if(ordenPago.init_point)
-        {
-            alert(ordenPago.init_point)
+        {            
             //Redirige a la pagina de pago
             window.location.href = ordenPago.init_point;            
         }               

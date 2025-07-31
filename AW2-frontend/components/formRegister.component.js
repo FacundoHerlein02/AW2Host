@@ -19,7 +19,8 @@ export const formRegister=`
                 <input type="password" class="w-full pl-5 text-lg xl:h-9 rounded-full" placeholder="Contraseña" id="pass">
             </div>
         </div>          
-        <input type="submit" class="bg-green-400 rounded-3xl font-semibold w-3/4 h-10 m-5 2xl:w-2/5"value="Registrarse">                            
+        <input type="submit" class="bg-green-400 rounded-3xl font-semibold w-3/4 h-10 m-5 2xl:w-2/5"value="Registrarse">
+        <span id="spinnerRegister" class="hidden ml-2 border-2 border-t-2 border-t-white border-green-700 rounded-full w-5 h-5 animate-spin"></span>                            
     </form>
 <div class="flex flex-col items-center mb-5">
     <p flex>¿Ya tenés una cuenta?</p><button type="button" class="btnLogin text-blue-500">Iniciar Sesion</button>                
