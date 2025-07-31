@@ -26,8 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 function asignarEventos(){
     asignarEventosCarrito()
-    asignarEventosFiltro()
-    navbarEventos()
+    asignarEventosFiltro()    
 };
 function asignarEventosFiltro(){
     const marcas= containerfiltroMarcas.querySelectorAll('div[data-marca]');
